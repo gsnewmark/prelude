@@ -25,6 +25,7 @@
 (add-to-list 'sml/hidden-modes " Projectile")
 (add-to-list 'sml/hidden-modes " Pre")
 (add-to-list 'sml/hidden-modes " ws")
+(add-to-list 'sml/hidden-modes " WS")
 (add-to-list 'sml/hidden-modes " Undo-Tree")
 (add-to-list 'sml/hidden-modes " VHl")
 (add-to-list 'sml/hidden-modes " SliNav")
@@ -32,6 +33,8 @@
 (add-to-list 'sml/hidden-modes " yas")
 (add-to-list 'sml/hidden-modes " cljr")
 (add-to-list 'sml/hidden-modes " G-+")
+(add-to-list 'sml/hidden-modes " MRev")
+(add-to-list 'sml/hidden-modes " Fly")
 
 ;; Set font
 (add-to-list 'default-frame-alist '(font . "Menlo-9"))
