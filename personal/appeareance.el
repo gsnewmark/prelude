@@ -36,6 +36,5 @@
 ;; Set font
 (add-to-list 'default-frame-alist '(font . "Menlo-9"))
 
-;; Misc config
-(if (fboundp 'fringe-mode)
-    (fringe-mode 8))
+;; Remove scroll bar
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
