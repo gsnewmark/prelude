@@ -21,6 +21,15 @@
 (global-set-key (kbd "C-c w /") (lambda () (interactive) (enlarge-window -1)))
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
 
+;; Git Gutter
+(global-set-key (kbd "C-c v g") 'git-gutter:toggle)
+
+;; Jump to next/previous diff
+(global-set-key (kbd "C-c v p") 'git-gutter:previous-diff)
+(global-set-key (kbd "C-c v n") 'git-gutter:next-diff)
+(global-set-key (kbd "C-c v d") 'git-gutter:popup-diff)
+(global-set-key (kbd "C-c v r") 'git-gutter:revert-hunk)
+
 ;;mark current function
 (global-set-key (kbd "C-x C-p") 'mark-defun)
 

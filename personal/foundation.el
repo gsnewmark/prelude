@@ -1,4 +1,4 @@
-(prelude-require-packages '(xclip idomenu))
+(prelude-require-packages '(xclip idomenu git-gutter))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
@@ -60,3 +60,7 @@
   (flyspell-goto-next-error)
   (ispell-word))
 (global-set-key (kbd "M-<f6>") 'flyspell-check-next-highlighted-word)
+
+;; git-gutter
+(global-diff-hl-mode -1)
+(global-git-gutter-mode +1)
