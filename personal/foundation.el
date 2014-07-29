@@ -1,4 +1,4 @@
-(prelude-require-package 'xclip)
+(prelude-require-packages '(xclip idomenu))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)

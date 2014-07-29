@@ -1,5 +1,7 @@
 (global-set-key (kbd "C-c x t") 'toggle-input-method)
 
+(global-set-key (kbd "C-x C-i") 'idomenu)
+
 ;; Org-mode
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c a") 'org-agenda)
