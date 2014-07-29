@@ -5,7 +5,8 @@
 
 (load-theme 'solarized-dark t)
 
-(if (not window-system) '(default ((t (:background "nil")))))
+;; fix terminal background color
+(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
 ;; Modeline conf
 (require 'smart-mode-line)
