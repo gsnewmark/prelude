@@ -4,22 +4,16 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-
 ;; From emacs-live https://github.com/overtone/emacs-live
 
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
 ;; winner undo and redo
-(global-set-key (kbd "C-c x b") 'winner-undo)
-(global-set-key (kbd "C-c x f") 'winner-redo)
+(global-set-key (kbd "C-c w b") 'winner-undo)
+(global-set-key (kbd "C-c w f") 'winner-redo)
 
 ;;window and buffer movement
-(global-set-key (kbd "C-c w r") 'rotate-windows)
-(global-set-key (kbd "C-c w p") 'buf-move-up)
-(global-set-key (kbd "C-c w n") 'buf-move-down)
-(global-set-key (kbd "C-c w b") 'buf-move-left)
-(global-set-key (kbd "C-c w f") 'buf-move-right)
 (global-set-key (kbd "C-c w .") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c w ,") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-c w /") (lambda () (interactive) (enlarge-window -1)))
@@ -66,3 +60,12 @@
 (define-key lisp-mode-shared-map (kbd "M-RET") 'live-lisp-describe-thing-at-point)
 (define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-RET") 'cider-doc)
+
+;; SmartParens
+(define-key sp-keymap (kbd "C-M-e") 'sp-backward-barf-sexp)
+(define-key sp-keymap (kbd "C-M-s") 'sp-backward-slurp-sexp)
+(define-key sp-keymap (kbd "C-M-j") 'sp-forward-slurp-sexp)
+(define-key sp-keymap (kbd "C-M-y") 'sp-forward-barf-sexp)
+(define-key sp-keymap (kbd "M-S")   'sp-split-sexp)
+(define-key sp-keymap (kbd "M-s")   'sp-splice-sexp)
+(define-key sp-keymap (kbd "M-j")   'sp-join-sexp)
