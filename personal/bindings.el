@@ -1,4 +1,4 @@
-(global-set-key (kbd "C-c x t") 'toggle-input-method)
+(global-set-key (kbd "C-x t") 'toggle-input-method)
 
 (global-set-key (kbd "C-x C-i") 'idomenu)
 
