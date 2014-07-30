@@ -36,6 +36,7 @@
 (add-to-list 'sml/hidden-modes " G-+")
 (add-to-list 'sml/hidden-modes " MRev")
 (add-to-list 'sml/hidden-modes " Fly")
+(add-to-list 'sml/hidden-modes " GitGutter")
 
 ;; Set font
 (add-to-list 'default-frame-alist '(font . "Menlo-9"))
