@@ -20,23 +20,11 @@
 (setq sml/name-width 35)
 (setq sml/mode-width 'full)
 
-(add-to-list 'sml/hidden-modes " AC")
-(add-to-list 'sml/hidden-modes " guru")
-(add-to-list 'sml/hidden-modes " company")
-(add-to-list 'sml/hidden-modes " Projectile")
-(add-to-list 'sml/hidden-modes " Pre")
-(add-to-list 'sml/hidden-modes " ws")
-(add-to-list 'sml/hidden-modes " WS")
-(add-to-list 'sml/hidden-modes " Undo-Tree")
-(add-to-list 'sml/hidden-modes " VHl")
-(add-to-list 'sml/hidden-modes " SliNav")
-(add-to-list 'sml/hidden-modes " Fill")
-(add-to-list 'sml/hidden-modes " yas")
-(add-to-list 'sml/hidden-modes " cljr")
-(add-to-list 'sml/hidden-modes " G-+")
-(add-to-list 'sml/hidden-modes " MRev")
-(add-to-list 'sml/hidden-modes " Fly")
-(add-to-list 'sml/hidden-modes " GitGutter")
+(setf sml/hidden-modes
+      (cl-list*
+       " AC" " guru" " company" " Projectile" " Pre" " ws" " WS" " VHl" " yas"
+       " SliNav" " Fill" " cljr" " G-+" " MRev" " Fly" " Undo-Tree" " GitGutter"
+       sml/hidden-modes))
 
 ;; Set font
 (add-to-list 'default-frame-alist '(font . "Menlo-9"))
