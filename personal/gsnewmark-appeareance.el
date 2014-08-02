@@ -1,3 +1,12 @@
+;;; gsnewmark-appeareance.el --- Appeareance configuration.
+;;
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;;; Code:
+
 (prelude-require-packages '(solarized-theme smart-mode-line))
 
 ;; Solarized color theme
@@ -31,3 +40,7 @@
 
 ;; Remove scroll bar
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+(provide 'gsnewmark-appeareance)
+
+;;; gsnewmark-appeareance.el ends here

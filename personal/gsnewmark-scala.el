@@ -1,3 +1,12 @@
+;;; gsnewmark-scala.el --- Scala configuration.
+;;
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;;; Code:
+
 (prelude-require-package 'ensime)
 
 (require 'scala-mode2)
@@ -38,3 +47,7 @@
 
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+(provide 'gsnewmark-scala)
+
+;;; gsnewmark-scala.el ends here

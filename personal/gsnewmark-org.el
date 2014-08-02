@@ -1,3 +1,12 @@
+;;; gsnewmark-org.el --- Org-mode configuration.
+;;
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;;; Code:
+
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-hook 'org-mode-hook
           (lambda ()
@@ -73,3 +82,7 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-babel-evaluate nil)
 (setq org-src-window-setup 'current-window)
+
+(provide 'gsnewmark-org)
+
+;;; gsnewmark-org.el ends here

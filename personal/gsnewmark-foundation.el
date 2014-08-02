@@ -1,3 +1,12 @@
+;;; gsnewmark-foundation.el --- Misc Emacs configuration.
+;;
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;;; Code:
+
 (prelude-require-packages '(xclip idomenu git-gutter))
 
 (setq-default tab-width 4)
@@ -29,7 +38,7 @@
   (delete-other-windows))
 
 (defun magit-quit-session ()
-  "Restores the previous window configuration and kills the magit buffer"
+  "Restore the previous window configuration and kill the magit buffer."
   (interactive)
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
@@ -55,7 +64,7 @@
 ;; correction keyboard shortcuts
 (global-set-key (kbd "C-<f6>") 'flyspell-check-previous-highlighted-word)
 (defun flyspell-check-next-highlighted-word ()
-  "Custom function to spell check next highlighted word"
+  "Custom function to spell check next highlighted word."
   (interactive)
   (flyspell-goto-next-error)
   (ispell-word))
@@ -64,3 +73,7 @@
 ;; git-gutter
 (global-diff-hl-mode -1)
 (global-git-gutter-mode +1)
+
+(provide 'gsnewmark-foundation)
+
+;;; gsnewmark-foundation.el ends here

@@ -1,3 +1,12 @@
+;;; gsnewmark-bindings.el --- Key bindings.
+;;
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;;; Code:
+
 (global-set-key (kbd "C-x t") 'toggle-input-method)
 
 (global-set-key (kbd "C-x C-i") 'idomenu)
@@ -80,3 +89,7 @@
 (define-key sp-keymap (kbd "M-S")   'sp-split-sexp)
 (define-key sp-keymap (kbd "M-s")   'sp-splice-sexp)
 (define-key sp-keymap (kbd "M-j")   'sp-join-sexp)
+
+(provide 'gsnewmark-bindings)
+
+;;; gsnewmark-bindings.el ends here
