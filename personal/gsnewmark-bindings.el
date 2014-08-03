@@ -75,11 +75,11 @@
 ;; Ace jump mode
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 
-;; Show documentation/information with M-RET
+;; Clojure keybindings
 (require 'cider)
-(define-key lisp-mode-shared-map (kbd "M-RET") 'live-lisp-describe-thing-at-point)
 (define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-RET") 'cider-doc)
+(define-key cider-mode-map (kbd "M-r") 'cider-reset)
 
 ;; SmartParens
 (define-key sp-keymap (kbd "C-M-e") 'sp-backward-barf-sexp)

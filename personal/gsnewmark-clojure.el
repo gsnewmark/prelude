@@ -11,6 +11,10 @@
 
 (setq cider-repl-use-clojure-font-lock t)
 
+(defun cider-reset ()
+  (interactive)
+  (cider-interactive-eval "(user/reset)"))
+
 (provide 'gsnewmark-clojure)
 
 ;;; gsnewmark-clojure.el ends here
