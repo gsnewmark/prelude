@@ -82,6 +82,7 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-babel-evaluate nil)
 (setq org-src-window-setup 'current-window)
+(setq org-adapt-indentation nil)
 
 (provide 'gsnewmark-org)
 
