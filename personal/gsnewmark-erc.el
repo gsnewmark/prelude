@@ -9,7 +9,10 @@
 
 (prelude-require-package 'erc-hl-nicks)
 
+(require 'erc)
 (require 'erc-hl-nicks)
+
+(setq erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE"))
 
 (provide 'gsnewmark-erc)
 
