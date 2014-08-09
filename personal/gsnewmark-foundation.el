@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(prelude-require-packages '(xclip idomenu git-gutter multiple-cursors))
+(prelude-require-packages '(xclip idomenu git-gutter))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
