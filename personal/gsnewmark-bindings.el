@@ -11,60 +11,69 @@
 
 (global-set-key (kbd "C-x C-i") 'idomenu)
 
-;; Org-mode
+;;; Org-mode
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-;; From emacs-live https://github.com/overtone/emacs-live
+;;; Multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m l") 'mc/edit-lines)
+(global-set-key (kbd "C-c m b") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-c m e") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
-;; Should be able to eval-and-replace anywhere.
+;;; From emacs-live https://github.com/overtone/emacs-live
+
+;;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
-;; winner undo and redo
+;;; winner undo and redo
 (global-set-key (kbd "C-c w b") 'winner-undo)
 (global-set-key (kbd "C-c w f") 'winner-redo)
 
-;;window and buffer movement
+;;; window and buffer movement
 (global-set-key (kbd "C-c w .") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c w ,") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-c w /") (lambda () (interactive) (enlarge-window -1)))
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
 
-;; Git Gutter
+;;; Git Gutter
 (global-set-key (kbd "C-c v g") 'git-gutter:toggle)
 
-;; Jump to next/previous diff
+;;; Jump to next/previous diff
 (global-set-key (kbd "C-c v p") 'git-gutter:previous-diff)
 (global-set-key (kbd "C-c v n") 'git-gutter:next-diff)
 (global-set-key (kbd "C-c v d") 'git-gutter:popup-diff)
 (global-set-key (kbd "C-c v r") 'git-gutter:revert-hunk)
 
-;;mark current function
+;;; mark current function
 (global-set-key (kbd "C-x C-p") 'mark-defun)
 
-;;make ^h delete rather than help
+;;; make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
-;;redefine help shortcut
+;;; redefine help shortcut
 (global-set-key (kbd "M-h") 'help-command)
 
-;;allow the deletion of words:
-;;backward kill word (forward kill word is M-d)
+;;; allow the deletion of words:
+;;; backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-\\") 'backward-kill-word)
 
-;;kill regions
+;;; kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
-;;set the mark
+;;; set the mark
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
-;;repeat previous command
+;;; repeat previous command
 (global-set-key (kbd "M-'") 'repeat)
 
-;; Align your code in a pretty way.
+;;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-;; comment region
+;;; comment region
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 
 (global-set-key (kbd "C-s")   'isearch-forward)
@@ -72,16 +81,16 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-M-r") 'isearch-backward-regexp)
 
-;; Ace jump mode
+;;; Ace jump mode
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 
-;; Clojure keybindings
+;;; Clojure keybindings
 (require 'cider)
 (define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-r") 'cider-reset)
 
-;; SmartParens
+;;; SmartParens
 (define-key sp-keymap (kbd "C-M-e") 'sp-backward-barf-sexp)
 (define-key sp-keymap (kbd "C-M-s") 'sp-backward-slurp-sexp)
 (define-key sp-keymap (kbd "C-M-j") 'sp-forward-slurp-sexp)
