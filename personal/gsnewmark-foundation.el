@@ -7,31 +7,31 @@
 
 ;;; Code:
 
-(prelude-require-packages '(xclip idomenu git-gutter))
+(prelude-require-packages '(xclip idomenu git-gutter ag))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
 
-;; Add ukrainian input method
+;;; Add ukrainian input method
 (set-input-method 'ukrainian-computer)
 
-;; whitespace config
+;;; whitespace config
 (setq whitespace-style '(face lines-tail trailing))
 (setq-default whitespace-line-column fill-column)
 (global-whitespace-mode t)
 (setq whitespace-global-modes '(not erc-mode scala-mode))
 
-;; Auto refresh buffers
+;;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
-;; Also auto refresh dired, but be quiet about it
+;;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
-;; Workaround for auto completion in terminal modes
+;;; Workaround for auto completion in terminal modes
 (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
 
-;; full screen magit-status
+;;; full screen magit-status
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
   ad-do-it
@@ -43,17 +43,17 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
-;; Integrate terminal-mode clipboard with X11 one
+;;; Integrate terminal-mode clipboard with X11 one
 (require 'xclip)
 (turn-on-xclip)
 
-;; Enable flyspell for comments in programming languages
+;;; Enable flyspell for comments in programming languages
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (dolist (hook '(org-mode-hook markdown-mode-hook magit-log-edit-mode-hook))
   (add-hook hook 'flyspell-mode))
 
-;; dictionary switching
+;;; dictionary switching
 (defun fd-switch-dictionary()
   (interactive)
   (let* ((dic ispell-current-dictionary)
@@ -61,7 +61,7 @@
     (ispell-change-dictionary change)
     (message "Dictionary switched from %s to %s" dic change)))
 (global-set-key (kbd "<f6>") 'fd-switch-dictionary)
-;; correction keyboard shortcuts
+;;; correction keyboard shortcuts
 (global-set-key (kbd "C-<f6>") 'flyspell-check-previous-highlighted-word)
 (defun flyspell-check-next-highlighted-word ()
   "Custom function to spell check next highlighted word."
@@ -70,9 +70,12 @@
   (ispell-word))
 (global-set-key (kbd "M-<f6>") 'flyspell-check-next-highlighted-word)
 
-;; git-gutter
+;;; git-gutter
 (global-diff-hl-mode -1)
 (global-git-gutter-mode +1)
+
+;;; Enable highlighting in Ag search results
+(setq ag-highlight-search t)
 
 (provide 'gsnewmark-foundation)
 
