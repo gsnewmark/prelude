@@ -29,6 +29,9 @@
         ("abstract class" "^[ \\t]*\\(abstract class +\\)\\([^(): ]+\\)" 2)
         ("object" "\\(object +\\)\\([^(): ]+\\)" 2)))
 
+(require 'ensime)
+
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'scala-mode-hook
           '(lambda ()
              (local-set-key (kbd "RET")
@@ -42,11 +45,9 @@
              (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
              (local-set-key (kbd "C-c M-j") 'ensime)
              (set-fill-column 120)
-             (setq imenu-generic-expression scala-imenu-generic-expression)))
+             (setq imenu-generic-expression scala-imenu-generic-expression)
+             (setq ensime-sbt-perform-on-save "test-quick")))
 (add-hook 'scala-mode-hook 'flyspell-prog-mode)
-
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 (provide 'gsnewmark-scala)
 
