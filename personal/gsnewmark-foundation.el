@@ -43,6 +43,8 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
+(setq ediff-split-window-function 'split-window-horizontally)
+
 ;;; Integrate terminal-mode clipboard with X11 one
 (require 'xclip)
 (turn-on-xclip)
