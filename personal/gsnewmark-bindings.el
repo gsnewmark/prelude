@@ -7,8 +7,6 @@
 
 ;;; Code:
 
-(prelude-require-packages '(multiple-cursors))
-
 (global-set-key (kbd "C-x t") 'toggle-input-method)
 
 (global-set-key (kbd "C-x C-i") 'idomenu)
@@ -16,14 +14,25 @@
 ;;; Org-mode
 (global-set-key (kbd "C-c c") 'org-capture)
 
-;;; Multiple cursors
-(require 'multiple-cursors)
-(global-set-key (kbd "C-c m l") 'mc/edit-lines)
-(global-set-key (kbd "C-c m b") 'mc/edit-beginnings-of-lines)
-(global-set-key (kbd "C-c m e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+(eval-after-load 'gsnewmark-foundation
+  '(progn
+     ;; Multiple cursors
+     (require 'multiple-cursors)
+     (global-set-key (kbd "C-c m l") 'mc/edit-lines)
+     (global-set-key (kbd "C-c m b") 'mc/edit-beginnings-of-lines)
+     (global-set-key (kbd "C-c m e") 'mc/edit-ends-of-lines)
+     (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+     (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+     (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+
+     ;; neotree
+     (require 'neotree)
+     (global-set-key (kbd "M-<f1>") 'neotree-toggle)
+
+     ;; FlySpell
+     (global-set-key (kbd "<f6>") 'fd-switch-dictionary)
+     (global-set-key (kbd "C-<f6>") 'flyspell-check-previous-highlighted-word)
+     (global-set-key (kbd "M-<f6>") 'flyspell-check-next-highlighted-word)))
 
 ;;; From emacs-live https://github.com/overtone/emacs-live
 
