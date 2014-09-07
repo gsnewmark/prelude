@@ -13,7 +13,8 @@
 
 (defun cider-reset ()
   (interactive)
-  (cider-interactive-eval "(user/reset)"))
+  (with-current-buffer (cider-current-repl-buffer)
+    (cider-interactive-eval "(user/reset)")))
 
 (provide 'gsnewmark-clojure)
 
