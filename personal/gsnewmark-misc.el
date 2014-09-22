@@ -16,6 +16,7 @@
 ;;; TODO safer header transformation (using regexp)
 ;;; TODO extract common helpers
 ;;; TODO try moving to http://tkf.github.io/emacs-request/
+;;; TODO transform url parameters to key==value
 (defun gsnewmark-run-request-from-wiki (start end)
   "Custom function to run http request described as:
 
@@ -35,18 +36,21 @@
          (method-and-url (car lines))
          (req-arguments
           (--partition-by-header (s-starts-with? "--- " it) (cddr lines)))
-         (headers (s-join " "
-                          (--map (s-replace ": " ":" it)
-                           (--filter (not (s-starts-with? it "```'''"))
-                                     (cdar
-                                      (--filter (s-equals? (car it) "--- Headers ---" )
-                                                req-arguments))))))
+         (headers
+          (s-join
+           " "
+           (--map (s-concat "'" it "'")
+                  (--map (s-replace ": " ":" it)
+                         (--filter (not (s-starts-with? it "```'''"))
+                                   (cdar
+                                    (--filter (s-equals? (car it) "--- Headers ---" )
+                                              req-arguments)))))))
          (json (s-join " "
                        (--filter (not (s-starts-with? it "```json'''"))
                                  (cdar
                                   (--filter (s-equals? (car it) "--- Body ---" )
                                             req-arguments)))))
-         (command (concat "echo '" json "'| http --pretty=format --print=hb " method-and-url " " headers)))
+         (command (concat "echo '" json "'| http --pretty=format --print=hbHB " method-and-url " " headers)))
     (with-output-to-temp-buffer method-and-url
       (print (shell-command-to-string command)))))
 
