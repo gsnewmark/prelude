@@ -9,9 +9,6 @@
 
 (prelude-require-packages '(js2-mode company-tern tern skewer-mode))
 
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 (js2-imenu-extras-mode)
