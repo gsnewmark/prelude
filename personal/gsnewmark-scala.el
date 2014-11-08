@@ -41,12 +41,10 @@
                                (scala-indent:insert-asterisk-on-multiline-comment)))
              (local-set-key (kbd "<backtab>")
                             'scala-indent:indent-with-reluctant-strategy)
-             (local-set-key (kbd "M-.") 'sbt-find-definitions)
              (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
              (local-set-key (kbd "C-c M-j") 'ensime)
              (set-fill-column 120)
-             (setq imenu-generic-expression scala-imenu-generic-expression)
-             (setq ensime-sbt-perform-on-save "test-quick")))
+             (setq imenu-generic-expression scala-imenu-generic-expression)))
 (add-hook 'scala-mode-hook 'flyspell-prog-mode)
 
 (provide 'gsnewmark-scala)
