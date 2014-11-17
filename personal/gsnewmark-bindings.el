@@ -39,6 +39,8 @@
      (require 'gsnewmark-misc)
      (global-set-key (kbd "C-c h r") 'gsnewmark-run-request-from-wiki)))
 
+(global-set-key (kbd "C-M-=") 'er/contract-region)
+
 ;;; From emacs-live https://github.com/overtone/emacs-live
 
 ;;; Should be able to eval-and-replace anywhere.
