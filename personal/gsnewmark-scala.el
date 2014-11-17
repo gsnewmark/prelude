@@ -12,7 +12,8 @@
 (require 'scala-mode2)
 
 (custom-set-variables
- '(scala-indent:default-run-on-strategy scala-indent:eager-strategy))
+ '(scala-indent:default-run-on-strategy scala-indent:operator-strategy)
+ '(scala-indent:use-javadoc-style t))
 
 ;; from https://github.com/tototoshi/dotemacs/blob/master/my-scala-config.el#L28
 (setq scala-imenu-generic-expression
