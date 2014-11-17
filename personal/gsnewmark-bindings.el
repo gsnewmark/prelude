@@ -34,11 +34,6 @@
      (global-set-key (kbd "C-<f6>") 'flyspell-check-previous-highlighted-word)
      (global-set-key (kbd "M-<f6>") 'flyspell-check-next-highlighted-word)))
 
-(eval-after-load 'gsnewmark-misc
-  '(progn
-     (require 'gsnewmark-misc)
-     (global-set-key (kbd "C-c h r") 'gsnewmark-run-request-from-wiki)))
-
 (global-set-key (kbd "C-M-=") 'er/contract-region)
 
 ;;; From emacs-live https://github.com/overtone/emacs-live

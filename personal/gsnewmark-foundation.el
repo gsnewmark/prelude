@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(prelude-require-packages '(xclip idomenu git-gutter ag multiple-cursors neotree))
+(prelude-require-packages '(xclip idomenu git-gutter ag multiple-cursors neotree restclient))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
