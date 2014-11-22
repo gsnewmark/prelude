@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(prelude-require-package 'clj-refactor)
+
 (require 'cider)
 
 (setq cider-repl-use-clojure-font-lock t)
@@ -15,6 +17,11 @@
   (interactive)
   (with-current-buffer (cider-current-repl-buffer)
     (cider-interactive-eval "(user/reset)")))
+
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-r")))
 
 (provide 'gsnewmark-clojure)
 
