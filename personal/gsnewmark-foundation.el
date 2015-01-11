@@ -7,7 +7,16 @@
 
 ;;; Code:
 
-(prelude-require-packages '(xclip idomenu git-gutter ag multiple-cursors neotree restclient helm-ag))
+(prelude-require-packages
+ '(xclip
+   idomenu
+   git-gutter
+   ag
+   multiple-cursors
+   neotree
+   restclient
+   helm-ag
+   flycheck-pos-tip))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
@@ -74,6 +83,9 @@
 
 ;;; Enable highlighting in Ag search results
 (setq ag-highlight-search t)
+
+(eval-after-load 'flycheck
+  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 (provide 'gsnewmark-foundation)
 
