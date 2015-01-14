@@ -46,11 +46,11 @@
   ad-do-it
   (delete-other-windows))
 
-(defun magit-quit-session ()
-  "Restore the previous window configuration and kill the magit buffer."
-  (interactive)
-  (kill-buffer)
-  (jump-to-register :magit-fullscreen))
+(defadvice magit-mode-quit-window (around magit-restore-screen activate)
+  (let ((current-mode major-mode))
+    ad-do-it
+    (when (eq 'magit-status-mode current-mode)
+      (jump-to-register :magit-fullscreen))))
 
 (setq ediff-split-window-function 'split-window-horizontally)
 
