@@ -34,6 +34,31 @@
      (global-set-key (kbd "C-<f6>") 'flyspell-check-previous-highlighted-word)
      (global-set-key (kbd "M-<f6>") 'flyspell-check-next-highlighted-word)))
 
+(eval-after-load 'gsnewmark-python
+  '(progn
+     (require 'jedi)
+     (add-hook 'python-mode-hook
+               '(lambda ()
+                  (local-set-key (kbd "C-c C-d d") 'jedi:show-doc)
+                  (local-set-key (kbd "M-.") 'jedi:goto-definition)
+                  (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)))))
+
+(eval-after-load 'gsnewmark-scala
+  '(progn
+     (require 'ensime)
+     (require 'scala-mode2)
+     (add-hook 'scala-mode-hook
+               '(lambda ()
+                  (local-set-key (kbd "RET")
+                                 '(lambda ()
+                                    (interactive)
+                                    (newline-and-indent)
+                                    (scala-indent:insert-asterisk-on-multiline-comment)))
+                  (local-set-key (kbd "<backtab>")
+                                 'scala-indent:indent-with-reluctant-strategy)
+                  (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
+                  (local-set-key (kbd "C-c M-j") 'ensime)))))
+
 (global-set-key (kbd "C-M-=") 'er/contract-region)
 
 ;;; From emacs-live https://github.com/overtone/emacs-live
