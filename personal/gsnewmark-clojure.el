@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(prelude-require-packages '(clj-refactor flycheck-clojure))
+(prelude-require-packages '(clj-refactor))
 
 (require 'cider)
 
@@ -23,8 +23,6 @@
                                (flycheck-mode 1)
                                (clj-refactor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-r")))
-
-(eval-after-load 'flycheck '(flycheck-clojure-setup))
 
 (provide 'gsnewmark-clojure)
 
