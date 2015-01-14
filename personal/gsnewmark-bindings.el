@@ -9,7 +9,7 @@
 
 (global-set-key (kbd "C-x t") 'toggle-input-method)
 
-(global-set-key (kbd "C-x C-i") 'idomenu)
+(global-set-key (kbd "C-x C-i") 'helm-imenu)
 
 ;;; Org-mode
 (global-set-key (kbd "C-c c") 'org-capture)
