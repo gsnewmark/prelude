@@ -13,7 +13,10 @@
   '(progn
      (autoload 'ghc-init "ghc" nil t)
 
-     (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+     (add-hook 'haskell-mode-hook
+               (lambda ()
+                 (ghc-init)
+                 (rainbow-delimiters-mode)))
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
      (custom-set-variables
