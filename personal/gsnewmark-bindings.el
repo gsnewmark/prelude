@@ -59,6 +59,12 @@
                   (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
                   (local-set-key (kbd "C-c M-j") 'ensime)))))
 
+(eval-after-load 'gsnewmark-haskell
+  '(progn
+     (require 'haskell-mode)
+     (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-interactive-bring)
+     (define-key haskell-mode-map (kbd "SPC") 'haskell-mode-contextual-space)))
+
 (global-set-key (kbd "C-M-=") 'er/contract-region)
 
 ;;; From emacs-live https://github.com/overtone/emacs-live
