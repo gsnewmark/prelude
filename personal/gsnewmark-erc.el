@@ -14,6 +14,9 @@
 
 (setq erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE"))
 
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#clojure" "#scala" "#haskell")))
+
 (provide 'gsnewmark-erc)
 
 ;;; gsnewmark-erc.el ends here
