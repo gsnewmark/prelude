@@ -63,6 +63,8 @@
   '(progn
      (require 'haskell-mode)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-interactive-bring)
+     (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+     (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
      (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
      (define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info)
      (define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
