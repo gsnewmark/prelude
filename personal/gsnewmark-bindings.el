@@ -63,6 +63,10 @@
   '(progn
      (require 'haskell-mode)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-interactive-bring)
+     (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
+     (define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info)
+     (define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
+     (define-key haskell-mode-map (kbd "C-c C-n c") 'haskell-process-cabal)
      (define-key haskell-mode-map (kbd "SPC") 'haskell-mode-contextual-space)))
 
 (global-set-key (kbd "C-M-=") 'er/contract-region)
