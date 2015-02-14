@@ -72,7 +72,7 @@
      (define-key haskell-mode-map (kbd "C-c C-n c") 'haskell-process-cabal)
      (define-key haskell-mode-map (kbd "SPC") 'haskell-mode-contextual-space)))
 
-(global-set-key (kbd "C-M-=") 'er/contract-region)
+(global-set-key (kbd "C-M-o") 'ace-window)
 
 ;;; From emacs-live https://github.com/overtone/emacs-live
 

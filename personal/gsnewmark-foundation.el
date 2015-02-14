@@ -87,6 +87,9 @@
 (eval-after-load 'flycheck
   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
+;;; ace-window customization
+(setq aw-scope 'frame)
+
 (provide 'gsnewmark-foundation)
 
 ;;; gsnewmark-foundation.el ends here
