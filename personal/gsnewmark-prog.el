@@ -16,6 +16,8 @@
 ;; Enable auto-fill
 (add-hook 'prog-mode-hook
           (lambda ()
+            (flyspell-prog-mode)
+            (subword-mode)
             (auto-fill-mode)))
 
 (add-hook 'markdown-mode-hook

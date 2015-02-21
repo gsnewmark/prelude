@@ -13,6 +13,7 @@
 
 ;;; Org-mode
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c M-.") 'org-time-stamp-inactive)
 
 (eval-after-load 'gsnewmark-foundation
   '(progn
@@ -93,9 +94,9 @@
 (global-set-key (kbd "C-c v g") 'git-gutter:toggle)
 
 ;;; Jump to next/previous diff
-(global-set-key (kbd "C-c v p") 'git-gutter:previous-diff)
-(global-set-key (kbd "C-c v n") 'git-gutter:next-diff)
-(global-set-key (kbd "C-c v d") 'git-gutter:popup-diff)
+(global-set-key (kbd "C-c v p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c v n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c v d") 'git-gutter:popup-hunk)
 (global-set-key (kbd "C-c v r") 'git-gutter:revert-hunk)
 
 ;;; mark current function

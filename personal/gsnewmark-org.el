@@ -43,6 +43,8 @@
       (list (concat org-directory "/gtd.org")
             (concat org-directory "/reading-review.org")))
 
+(setq org-agenda-restore-windows-after-quit t)
+
 ;; org-capture default file
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
