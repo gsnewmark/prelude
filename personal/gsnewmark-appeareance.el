@@ -36,7 +36,7 @@
        sml/hidden-modes))
 
 ;; Set font
-(add-to-list 'default-frame-alist '(font . "Menlo-9"))
+(add-to-list 'default-frame-alist '(font . "Fantasque Sans Mono-10"))
 
 ;; Remove scroll bar
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
