@@ -17,6 +17,8 @@
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#clojure" "#scala" "#haskell")))
 
+(add-to-list 'erc-modules 'notifications)
+
 (provide 'gsnewmark-erc)
 
 ;;; gsnewmark-erc.el ends here
