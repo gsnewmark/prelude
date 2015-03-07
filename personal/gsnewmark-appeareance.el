@@ -20,20 +20,20 @@
 ;; Modeline conf
 (require 'smart-mode-line)
 
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'respectful)
 (sml/setup)
+(sml/apply-theme 'automatic)
 
 (setq sml/shorten-directory t)
 (setq sml/shorten-modes t)
 (setq sml/name-width 35)
 (setq sml/mode-width 'full)
 
-(setf sml/hidden-modes
+(setf rm-excluded-modes
       (cl-list*
        " AC" " guru" " company" " Projectile" " Pre" " ws" " WS" " VHl" " yas"
        " SliNav" " Fill" " cljr" " G-+" " MRev" " Fly" " Undo-Tree" " GitGutter"
-       sml/hidden-modes))
+       " Helm" " SP/s" " ,"
+       rm-excluded-modes))
 
 ;; Set font
 (add-to-list 'default-frame-alist '(font . "Menlo-9"))
