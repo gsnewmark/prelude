@@ -7,11 +7,14 @@
 
 ;;; Code:
 
-(prelude-require-package 'jedi)
+(prelude-require-package 'company-jedi)
 
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
 (setq jedi:tooltip-method nil)
+
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (add-to-list 'company-backends 'company-jedi)
+             (jedi:setup)))
 
 (provide 'gsnewmark-python)
 
