@@ -16,7 +16,8 @@
    neotree
    restclient
    helm-ag
-   flycheck-pos-tip))
+   flycheck-pos-tip
+   company-quickhelp))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
@@ -101,6 +102,8 @@
 
 ;;; ace-window customization
 (setq aw-scope 'frame)
+
+(company-quickhelp-mode 1)
 
 (provide 'gsnewmark-foundation)
 
