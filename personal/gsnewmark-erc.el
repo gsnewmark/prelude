@@ -15,7 +15,7 @@
 (setq erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE"))
 
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#clojure" "#scala" "#haskell")))
+      '(("freenode.net" "#clojure" "#scala" "#haskell" "#clojurescript")))
 
 (add-to-list 'erc-modules 'notifications)
 
