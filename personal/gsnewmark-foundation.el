@@ -17,7 +17,8 @@
    restclient
    helm-ag
    flycheck-pos-tip
-   company-quickhelp))
+   company-quickhelp
+   guide-key))
 
 (setq-default tab-width 4)
 (setq-default fill-column 78)
@@ -104,6 +105,11 @@
 (setq aw-scope 'frame)
 
 (company-quickhelp-mode 1)
+
+(require 'guide-key)
+(setq guide-key/guide-key-sequence 't)
+(setq guide-key/popup-window-position 'bottom)
+(guide-key-mode 1)
 
 (provide 'gsnewmark-foundation)
 
