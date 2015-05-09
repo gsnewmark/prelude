@@ -133,7 +133,7 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward-regexp)
 
 ;;; Ace jump mode
-(global-set-key (kbd "C-o") 'ace-jump-mode)
+(global-set-key (kbd "C-o") 'avy-goto-word-1)
 
 ;;; Clojure keybindings
 (require 'cider)
