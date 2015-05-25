@@ -53,6 +53,8 @@
 
 (setq ediff-split-window-function 'split-window-horizontally)
 
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 (defun endless/add-PR-fetch ()
   "If refs/pull is not defined on a GH repo, define it."
   (let ((fetch-address
